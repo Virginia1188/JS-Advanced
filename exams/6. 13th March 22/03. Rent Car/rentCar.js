@@ -13,7 +13,7 @@ const rentCar = {
                 throw new Error('There are no such models in the catalog!')
             }
         } else {
-            throw new Error('Invalid input!')
+            throw new Error('Invalid input!');
         }
     },
     calculatePriceOfCar(model, days) {
@@ -48,4 +48,5 @@ const rentCar = {
             }
         }
     }
-}
+};
+module.exports = rentCar;
