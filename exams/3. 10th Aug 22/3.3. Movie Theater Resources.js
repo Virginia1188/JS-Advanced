@@ -1,25 +1,25 @@
 const movieTheater = {
   ageRestrictions(movieRating) {
     switch (movieRating) {
-      case "G":
-        return "All ages admitted to watch the movie";
-      case "PG":
-        return "Parental guidance suggested! Some material may not be suitable for pre-teenagers";
-      case "R":
-        return "Restricted! Under 17 requires accompanying parent or adult guardian";
-      case "NC-17":
-        return "No one under 17 admitted to watch the movie";
+      case 'G':
+        return 'All ages admitted to watch the movie';
+      case 'PG':
+        return 'Parental guidance suggested! Some material may not be suitable for pre-teenagers';
+      case 'R':
+        return 'Restricted! Under 17 requires accompanying parent or adult guardian';
+      case 'NC-17':
+        return 'No one under 17 admitted to watch the movie';
       default:
-        return "There are no age restrictions for this movie";
+        return 'There are no age restrictions for this movie';
     }
   },
   moneySpent(tickets, food, drinks) {
     if (
-      typeof tickets !== "number" ||
+      typeof tickets !== 'number' ||
       !Array.isArray(food) ||
       !Array.isArray(drinks)
     ) {
-      throw new Error("Invalid input");
+      throw new Error('Invalid input');
     }
 
     let bill = 0;
@@ -28,10 +28,10 @@ const movieTheater = {
 
     food.forEach((element) => {
       switch (element) {
-        case "Nachos":
+        case 'Nachos':
           bill += 6;
           break;
-        case "Popcorn":
+        case 'Popcorn':
           bill += 4.5;
           break;
       }
@@ -39,10 +39,10 @@ const movieTheater = {
 
     drinks.forEach((element) => {
       switch (element) {
-        case "Soda":
+        case 'Soda':
           bill += 2.5;
           break;
-        case "Water":
+        case 'Water':
           bill += 1.5;
           break;
       }
@@ -58,8 +58,8 @@ const movieTheater = {
     }
   },
   reservation(rowsArray, neededSeatsCount) {
-    if (!Array.isArray(rowsArray) || typeof neededSeatsCount !== "number") {
-      throw new Error("Invalid input");
+    if (!Array.isArray(rowsArray) || typeof neededSeatsCount !== 'number') {
+      throw new Error('Invalid input');
     }
 
     let availableRows = [];
@@ -72,3 +72,4 @@ const movieTheater = {
     return Math.max(...availableRows);
   },
 };
+module.exports = movieTheater;
