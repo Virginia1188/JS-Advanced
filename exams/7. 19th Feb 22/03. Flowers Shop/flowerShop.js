@@ -29,4 +29,5 @@ const flowerShop = {
         }
         return shop.join(' / ');
     }
-}
+};
+module.exports = flowerShop;
